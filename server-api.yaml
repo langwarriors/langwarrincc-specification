@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info: 
+  title: Langwarrin Community Centre Server API
+  description: API for Server
+  contact:
+    name: Taher Mohamed
+    email: tmmoh@student.unimelb.edu.au
+  version: 1.0.1
+
+paths:
+  /users:
+    get:
+      description: Returns a list of all users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        uuid: 
+          type: string
+        first_name: 
+          type: string
+        last_name: 
+          type: string
+        email:
+          type: string
+        phone: 
+          type: string
+
+
+
